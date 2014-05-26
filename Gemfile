@@ -12,6 +12,7 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'thin'
+gem 'bcrypt-ruby', :require => 'bcrypt'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_20]
