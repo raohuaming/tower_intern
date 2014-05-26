@@ -7,6 +7,10 @@
   "vendor": {
     "name": "bower-rails generated vendor assets",
     "dependencies": {
+      "angular": "~1.2.16",
+      "angular-resource": "~1.2.16",
+      "angular-ui-router": "~0.2.10",
+      "angular-bootstrap": "~0.11.0"
     }
   }
 }
