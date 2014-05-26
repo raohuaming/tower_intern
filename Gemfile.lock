@@ -45,6 +45,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    colorize (0.5.8)
     daemons (1.1.9)
     database_cleaner (1.0.1)
     debug_inspector (0.0.2)
@@ -66,6 +67,8 @@ GEM
       dotenv (~> 0.7.0)
       thor (~> 0.19.1)
     formatador (0.2.5)
+    gherkin-ruby (0.3.1)
+      racc
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -129,6 +132,7 @@ GEM
       pry
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
+    racc (1.4.11)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -181,6 +185,10 @@ GEM
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     slop (3.5.0)
+    spinach (0.8.9)
+      colorize (= 0.5.8)
+      gherkin-ruby (>= 0.3.1)
+      json
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -239,6 +247,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.0)
   simple_form
+  spinach
   sqlite3
   thin
   turbolinks
