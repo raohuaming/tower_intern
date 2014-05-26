@@ -2,6 +2,7 @@
   .row
     .col-md-4.col-md-offset-4
       %h1.text-center Tower
+      %small.text-danger(ng-show="error_messages") {{ error_messages }}
       %form.signup-form.form-horizontal(novalidate name='signupForm')
         .form-group
           .col-md-12
@@ -19,7 +20,7 @@
             %small.text-danger(ng-show="signupForm.password.$dirty && signupForm.password.$error.required") 请设置一个登录密码
         .form-group
           .col-md-12
-            %button.col-md-12.btn.btn-success(type="submit" ng-click="register(user)" ng-disabled="signupForm.$invalid") 注册
+            %button.col-md-12.btn.btn-success(ng-click="register(user)" ng-disabled="signupForm.$invalid") 注册
             %a
               %small.text-mute 点击注册表示你已阅读并同意《Tower 服务条款》
   .row
