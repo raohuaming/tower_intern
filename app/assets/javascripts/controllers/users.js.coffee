@@ -2,11 +2,11 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-window.app.controller 'UserController', ['$scope', '$timeout', '$log', 'User', 'Global', ($scope, $timeout, $log, User, global) ->
+window.app.controller 'UserController', ['$scope', '$timeout', '$location', '$log', 'User', 'Global', ($scope, $timeout, $location, $log, User, global) ->
   $scope.register = (user) ->
     User.save user, (user) ->
       global.setCurrentUser(user)
-      $log.debug user
+      $scope.signupResult = true
     , (res) ->
       $scope.error_messages = ""
       angular.forEach res.data.errors, (value, key) ->

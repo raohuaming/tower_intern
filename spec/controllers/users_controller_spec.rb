@@ -31,9 +31,6 @@ describe UsersController do
 
     context 'provide incorrect information' do
       it 'should return error messages' do
-        @user.name = ''
-        expect{ post :create, data }.not_to change { User.count }.by 1
-        expect(response.body.to_json).to include("name")
         @user.password = '12345'
         expect{ post :create, data }.not_to change { User.count }.by 1
         expect(response.body.to_json).to include("password")
