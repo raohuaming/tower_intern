@@ -25,4 +25,12 @@ class SessionsController < ApplicationController
     end
 
   end
+
+  def destroy
+    session[:user_id] = nil
+    respond_to do |format|
+      format.html { redirect_to new_session_path }
+    end
+
+  end
 end

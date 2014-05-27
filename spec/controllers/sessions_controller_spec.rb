@@ -39,4 +39,12 @@ describe SessionsController do
     end
   end
 
+  describe '#destroy' do
+    it 'should log user out' do
+      delete :destroy
+      expect(session[:user_id]).to be_nil
+      expect(response).to redirect_to(new_session_path)
+    end
+  end
+
 end
