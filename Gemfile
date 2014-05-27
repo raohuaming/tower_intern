@@ -21,6 +21,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'guard-spinach'
   gem 'html2haml'
   gem 'quiet_assets'
   gem 'rails_layout'
@@ -37,5 +38,7 @@ end
 group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
-  gem 'spinach'
+  gem 'spinach-rails'
+  gem 'capybara'
+  gem 'poltergeist'
 end

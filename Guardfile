@@ -68,3 +68,10 @@ guard :rspec do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
+
+guard 'spinach', :all_on_start => false do
+  watch(%r|^features/(.*)\.feature|)
+  watch(%r|^features/steps/(.*)([^/]+)\.rb|) do |m|
+    "features/#{m[1]}#{m[2]}.feature"
+  end
+end
