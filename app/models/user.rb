@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   validates :email, presence: { message: '请填写你的邮箱地址' },
                     uniqueness: { message: '该账号已存在，请直接登录后创建新团队' },
                     format: { with: EMAIL_REGEX, message: '请填写正确的邮箱地址' }
+  class Unauthentication < Exception
+  end
 end
