@@ -13,7 +13,7 @@ Feature: User signup
     And fill in email with 'sam@test.com'
     And fill in password with '12345678'
     When I press button 'signup'
-    Then I should successfully register a new account and redirect to my homepage
+    Then I should successfully register a new account
 
   @javascript
   Scenario: Sam wants to register a new account but with a registered email

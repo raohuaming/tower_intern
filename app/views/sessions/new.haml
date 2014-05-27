@@ -1,0 +1,31 @@
+.container(ng-controller='SessionController')
+  .row
+    .col-md-4.col-md-offset-4
+      %h1.text-center Tower
+  .row(ng-show='!signinResult')
+    .col-md-4.col-md-offset-4
+      %small.text-danger(ng-show="error_messages") {{ error_messages }}
+      %form.form-horizontal(novalidate name='signinForm')
+        .form-group
+          .col-md-12
+            %input.form-control(type="email" name="email" placeholder="登录邮箱" ng-model="user.email" required)
+            %small.text-danger(ng-show="signinForm.email.$dirty && signinForm.email.$error.required") 请填写你的邮箱地址
+            %small.text-danger(ng-show="signinForm.email.$dirty && signinForm.email.$error.email") 请填写正确的邮箱地址
+        .form-group
+          .col-md-12
+            %input.form-control(type="password" name="password" placeholder="密码" ng-model="user.password" ng-minlength=6 required)
+            %small.text-danger(ng-show="signinForm.password.$dirty && signinForm.password.$error.minlength") 这个字段的长度不能少于6位
+            %small.text-danger(ng-show="signinForm.password.$dirty && signinForm.password.$error.required") 请填写你的登录密码
+        .form-group
+          .col-md-12
+            %button.col-md-12.btn.btn-success(ng-click="signin(user)" ng-disabled="signinForm.$invalid") 登录
+  .row(ng-show='signinResult')
+    .col-md-4.col-md-offset-4
+      %h1.text-success.text-center 登录成功！
+  .row
+    .col-md-4.col-md-offset-4
+      %hr
+      %h5.text-center
+        没有账号？
+        %span
+          %a 免费注册 →

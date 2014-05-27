@@ -22,7 +22,7 @@ class Spinach::Features::UserSignup < Spinach::FeatureSteps
     click_button '注册'
   end
 
-  step 'I should successfully register a new account and redirect to my homepage' do
+  step 'I should successfully register a new account' do
     expect(page).to have_content('注册成功')
     user = User.find_by_email('sam@test.com')
     expect(user.name).to eq('sam')
